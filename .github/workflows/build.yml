@@ -17,4 +17,12 @@ jobs:
       ############################## Comma separated list - like 'linuxmint/xapp, linuxmint/cinnamon-desktop'
       dependencies: linuxmint/xapp
       ##############################
-
+  nomint:
+    name: Delete Linux Mint 22 tag/release
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name != 'pull_request'}}
+    steps:
+    - name: Keep only LMDE
+      run: gh release delete dev.mint22 --cleanup-tag || true
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
