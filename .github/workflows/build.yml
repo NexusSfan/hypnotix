@@ -23,6 +23,8 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ github.event_name != 'pull_request'}}
     steps:
+    - name: Checkout
+      uses: actions/checkout@v4.1.7
     - name: Keep only LMDE
       run: gh release delete dev.mint22 --cleanup-tag || true
       env:
