@@ -356,7 +356,7 @@ class MainWindow:
         # keep a reference to it (otherwise it gets randomly garbage collected)
 
         # Breaks debian due to old dependencies, workaround soon?
-        self.dark_mode_manager = XApp.DarkModeManager.new(prefer_dark_mode=True)
+        # self.dark_mode_manager = XApp.DarkModeManager.new(prefer_dark_mode=True)
 
         # Menubar
         accel_group = Gtk.AccelGroup()
